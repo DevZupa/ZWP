@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Territory" table="territory">
+    <indexes>
+      <index name="owner_uid" columns="owner_uid"/>
+      <index name="flag_stolen_by_uid" columns="flag_stolen_by_uid"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="positionX" type="float" column="position_x" precision="10" scale="0" nullable="false"/>
+    <field name="positionY" type="float" column="position_y" precision="10" scale="0" nullable="false"/>
+    <field name="positionZ" type="float" column="position_z" precision="10" scale="0" nullable="false"/>
+    <field name="radius" type="float" column="radius" precision="10" scale="0" nullable="false"/>
+    <field name="level" type="integer" column="level" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="flagTexture" type="string" column="flag_texture" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="flagStolen" type="boolean" column="flag_stolen" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="flagStolenAt" type="datetime" column="flag_stolen_at" nullable="true"/>
+    <field name="flagStealMessage" type="string" column="flag_steal_message" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="createdAt" type="datetime" column="created_at" nullable="false">
+      <options>
+        <option name="default">CURRENT_TIMESTAMP</option>
+      </options>
+    </field>
+    <field name="lastPaidAt" type="datetime" column="last_paid_at" nullable="true">
+      <options>
+        <option name="default">CURRENT_TIMESTAMP</option>
+      </options>
+    </field>
+    <field name="buildRights" type="string" column="build_rights" length="640" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="moderators" type="string" column="moderators" length="320" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <many-to-one field="flagStolenByUid" target-entity="Account" fetch="LAZY">
+      <join-columns>
+        <join-column name="flag_stolen_by_uid" referenced-column-name="uid"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="ownerUid" target-entity="Account" fetch="LAZY">
+      <join-columns>
+        <join-column name="owner_uid" referenced-column-name="uid"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Player" table="player">
+    <indexes>
+      <index name="player_uid" columns="account_uid"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="damage" type="float" column="damage" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="hunger" type="float" column="hunger" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">100</option>
+      </options>
+    </field>
+    <field name="thirst" type="float" column="thirst" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">100</option>
+      </options>
+    </field>
+    <field name="alcohol" type="float" column="alcohol" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="temperature" type="float" column="temperature" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">37</option>
+      </options>
+    </field>
+    <field name="wetness" type="float" column="wetness" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="oxygenRemaining" type="float" column="oxygen_remaining" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">1</option>
+      </options>
+    </field>
+    <field name="bleedingRemaining" type="float" column="bleeding_remaining" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="hitpoints" type="string" column="hitpoints" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">[]</option>
+      </options>
+    </field>
+    <field name="direction" type="float" column="direction" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="positionX" type="float" column="position_x" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="positionY" type="float" column="position_y" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="positionZ" type="float" column="position_z" precision="10" scale="0" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="spawnedAt" type="datetime" column="spawned_at" nullable="false">
+      <options>
+        <option name="default">CURRENT_TIMESTAMP</option>
+      </options>
+    </field>
+    <field name="assignedItems" type="text" column="assigned_items" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="backpack" type="string" column="backpack" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="backpackItems" type="text" column="backpack_items" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="backpackMagazines" type="text" column="backpack_magazines" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="backpackWeapons" type="text" column="backpack_weapons" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="currentWeapon" type="string" column="current_weapon" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="goggles" type="string" column="goggles" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="handgunItems" type="text" column="handgun_items" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="handgunWeapon" type="string" column="handgun_weapon" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="headgear" type="string" column="headgear" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="binocular" type="string" column="binocular" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="loadedMagazines" type="text" column="loaded_magazines" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="primaryWeapon" type="string" column="primary_weapon" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="primaryWeaponItems" type="text" column="primary_weapon_items" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="secondaryWeapon" type="string" column="secondary_weapon" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="secondaryWeaponItems" type="text" column="secondary_weapon_items" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="uniform" type="string" column="uniform" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="uniformItems" type="text" column="uniform_items" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="uniformMagazines" type="text" column="uniform_magazines" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="uniformWeapons" type="text" column="uniform_weapons" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="vest" type="string" column="vest" length="64" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="vestItems" type="text" column="vest_items" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="vestMagazines" type="text" column="vest_magazines" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="vestWeapons" type="text" column="vest_weapons" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="lastUpdatedAt" type="datetime" column="last_updated_at" nullable="false">
+      <options>
+        <option name="default">CURRENT_TIMESTAMP</option>
+      </options>
+    </field>
+    <many-to-one field="accountUid" target-entity="Account" fetch="LAZY">
+      <join-columns>
+        <join-column name="account_uid" referenced-column-name="uid"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
