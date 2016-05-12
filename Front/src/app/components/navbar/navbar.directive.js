@@ -3,10 +3,10 @@
 
   angular
     .module('zwp')
-    .directive('acmeNavbar', acmeNavbar);
+    .directive('zupaNavbar', zupaNavbar);
 
   /** @ngInject */
-  function acmeNavbar() {
+  function zupaNavbar() {
     var directive = {
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbar.html',

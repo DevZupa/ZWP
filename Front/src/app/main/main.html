@@ -1,108 +1,49 @@
-<section layout="row" flex  layout-fill>
-<md-sidenav id="zp-vertical-navigation" class="md-primary-bg md-locked-open zp-sidebar" md-is-locked-open="true" md-component-id="navigation" layout-fill>
-  <md-toolbar class="zp-site-header md-whiteframe-1dp layout-align-space-between-center layout-row" layout="row" layout-align="space-between center" >
-    <div class="logo layout-align-start-center layout-row" layout="row" layout-align="start center">
-    <span class="logo-image">Z</span>
-    <span class="logo-text">Web Panel</span>
-  </div>
-  <md-icon class="fold-toggle s18 md-font icon-backburger material-icons md-default-theme" md-font-icon="icon-backburger" ng-click="vm.toggleMsNavigationFolded()" role="button"></md-icon>
-  </md-toolbar>
-</md-sidenav>
-
-<div flex layout="column" class="layout-column flex">
-
-    <div layout="column" layout-fill layout-align="top center">
-
-
-      <md-toolbar id="toolbar" class="md-menu-toolbar md-whiteframe-1dp ng-scope md-default-theme" ui-view="toolbar">
-        <div layout="row" layout-align="start center" class="ng-scope layout-align-start-center layout-row">
-          <div layout="row" layout-align="start center" flex="" class="layout-align-start-center layout-row flex">
-            <button class="md-icon-button md-button ng-scope md-ink-ripple hide-gt-sm md-default-theme" type="button"
-                    ng-transclude="" id="navigation-toggle" ng-click="vm.toggleSidenav('navigation')" hide-gt-sm=""
-                    aria-label="Toggle navigation" translate="" translate-attr-aria-label="TOOLBAR.TOGGLE_NAVIGATION">
-              <md-icon md-font-icon="icon-menu"
-                       class="icon ng-scope ng-isolate-scope md-font icon-menu material-icons md-default-theme"
-                       aria-hidden="true">
-              </md-icon>
-            </button>
-            <div class="zp-server-icon">
-              <i class="material-icons">&#xE871;</i>
-            </div>
-            <div class="toolbar-separator"></div>
-            <div class="zp-server-name">
-              Eternal Gamers
-            </div>
-            <div class="toolbar-separator"></div><!-- ngIf: $root.loadingProgress --></div>
-          <div layout="row" layout-align="start center" class="layout-align-start-center layout-row">
-            <md-menu-bar id="user-menu" role="menubar" class="md-keyboard-mode md-default-theme">
-              <md-menu md-position-mode="left bottom" class="md-menu ng-scope">
-                <button class="user-button md-button ng-scope md-ink-ripple md-default-theme" type="button"
-                        ng-transclude="" ng-click="$mdOpenMenu()" aria-label="User settings" translate=""
-                        translate-attr-aria-label="TOOLBAR.USER_SETTINGS" aria-haspopup="true" aria-expanded="false"
-                        aria-owns="menu_container_7">
-                  <span layout="row" layout-align="space-between center"
-                       class="ng-scope layout-align-space-between-center layout-row">
-                    <i class="material-icons">&#xE7FF;</i>
-                    <span class="username hide-xs" hide-xs="">Zupa</span>
-                  </span>
-                </button>
-                <div class="md-open-menu-container md-whiteframe-z2" id="menu_container_7" style="display: none;"
-                     aria-hidden="true">
-                  <md-menu-content width="3" class="md-menu-bar-menu md-dense" role="menu">
-                    <md-menu-item class="md-indent" ui-sref="app.pages_profile" href="/pages/profile">
-                      <button class="md-button md-ink-ripple md-default-theme" type="button" ng-transclude=""
-                              role="menuitem" aria-label="My Profile"><span class="ng-scope">My Profile
-</span></button>
-                    </md-menu-item>
-                    <md-menu-item class="md-indent" ui-sref="app.mail" href="/mail">
-                      <md-icon md-font-icon="icon-email"
-                               class="icon ng-isolate-scope md-font icon-email material-icons md-default-theme"
-                               aria-hidden="true"></md-icon>
-                      <button class="md-button md-ink-ripple md-default-theme" type="button" ng-transclude=""
-                              role="menuitem" aria-label="Inbox"><span class="ng-scope">Inbox</span></button>
-                    </md-menu-item>
-                    <md-menu-item class="md-indent">
-                      <md-icon md-font-icon="" ng-class="vm.userStatus.icon" ng-style="{'color': vm.userStatus.color }"
-                               class="icon ng-isolate-scope material-icons icon-checkbox-marked-circle md-default-theme"
-                               aria-hidden="true" style="color: rgb(76, 175, 80);"></md-icon>
-                      <md-menu id="user-status-menu" md-position-mode="cascade" class="md-nested-menu md-menu ng-scope"
-                               md-nest-level="1">
-                        <button class="status md-button md-ink-ripple md-default-theme" type="button" ng-transclude=""
-                                ng-click="$mdOpenMenu()" ng-class="vm.userStatus.class" role="menuitem"
-                                aria-haspopup="true" aria-expanded="false" aria-owns="menu_container_6"
-                                aria-label="Online">
-                          <span class="ng-binding ng-scope">
-                            Online</span>
-                        </button>
-                      </md-menu>
-                    </md-menu-item>
-                  </md-menu-content>
-                </div>
-              </md-menu>
-            </md-menu-bar>
-            <div class="toolbar-separator"></div>
-            <md-menu id="language-menu" md-offset="0 72" md-position-mode="target-right target"
-                     class="md-menu ng-scope">
-              <button class="language-button md-button md-ink-ripple md-default-theme" type="button" ng-transclude=""
-                      ng-click="$mdOpenMenu()" aria-label="Language" md-menu-origin="" md-menu-align-target=""
-                      aria-haspopup="true" aria-expanded="false" aria-owns="menu_container_8">
-                <span layout="row" layout-align="center center" class="ng-scope layout-align-center-center layout-row">
-                  en
-                </span>
-              </button>
-            </md-menu>
-          </div>
-        </div>
-      </md-toolbar>
-
-
-      <md-content flex layout-padding>
-        test
-      </md-content>
-
+<div class="header" layout="row" class="md-whiteframe-1dp"
+     layout-align="space-between">
+    <div class="overlay"></div>
+    <div layout="column" layout-align="center start">
+        <div class="breadcrumb" layout="row" layout-align="start center">
+            <md-icon class="material-icons">home</md-icon>
+            <md-icon class="s16 separator material-icons">chevron_right</md-icon>
+            <span class="parent">Dashboard</span></div>
+        <div class="title">Dashboard</div>
     </div>
-    <div flex></div>
-
 </div>
 
-</section>
+<md-content class="md-padding" layout-xs="column" layout="row">
+    <div layout="row" layout-fill>
+<md-card flex="33">
+    <img src="assets/images/stats1.jpg" class="md-card-image" alt="image caption">
+    <md-card-content>
+        <h2>Statistics</h2>
+        <p>View public displayed info about the server</p>
+    </md-card-content>
+    <md-card-footer>
+        Continue
+    </md-card-footer>
+</md-card>
+
+<md-card flex="33">
+    <img src="assets/images/admin1.jpg" class="md-card-image" alt="image caption">
+    <md-card-content>
+        <h2>Server administration</h2>
+        <p>Manage and monitor the server.</p>
+    </md-card-content>
+    <md-card-footer>
+        Continue
+    </md-card-footer>
+</md-card>
+
+        <md-card flex="33">
+            <img src="assets/images/exile.jpg" class="md-card-image" alt="image caption">
+            <md-card-content>
+                <h2>My Exile</h2>
+                <p>Administrate your character and territory.</p>
+            </md-card-content>
+            <md-card-footer>
+                Continue
+            </md-card-footer>
+        </md-card>
+
+        </div>
+    </md-content>

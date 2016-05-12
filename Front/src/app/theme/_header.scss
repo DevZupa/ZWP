@@ -1,0 +1,37 @@
+.header {
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  padding: 24px;
+  background-image: url(/assets/images/arma.png);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  .breadcrumb {
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: #fefefe;
+    z-index: 2;
+    .separator {
+      margin: 0 8px;
+    }
+    md-icon {
+      color: #fefefe;
+    }
+  }
+  .title {
+    font-size: 34px;
+    color: #fefefe;
+    z-index: 2;
+  }
+  .overlay {
+    background-color: #000;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}

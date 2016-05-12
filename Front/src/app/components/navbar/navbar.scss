@@ -27,6 +27,17 @@ a:hover, a:focus {
   padding: 0 25px;
 }
 
-.zp-server-icon {
+.language-button, .user-button, .menu-button {
+  height: 64px;
+  margin: 0;
+  border-radius: 0;
+  min-width: 50px;
   padding: 0 25px;
+}
+
+.user-button {
+  .material-icons {
+    margin-right: 10px;
+    margin-top: -5px;
+  }
 }

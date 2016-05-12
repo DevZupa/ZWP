@@ -1,13 +1,32 @@
-<md-toolbar layout="row" layout-align="center center">
-
-  <md-button href="https://github.com/Swiip/generator-gulp-angular">Gulp Angular</md-button>
-
-  <section flex layout="row" layout-align="left center">
-    <md-button href="#" class="md-raised">Home</md-button>
-    <md-button href="#" class="md-raised">About</md-button>
-    <md-button href="#" class="md-raised">Contact</md-button>
-  </section>
-
-  <md-button class="acme-navbar-text">Application was created {{ vm.relativeDate }}.</md-button>
-
+<md-toolbar id="toolbar" class="md-menu-toolbar md-whiteframe-1dp md-default-theme">
+  <div layout="row" layout-align="start center" class="layout-align-start-center layout-row">
+    <div layout="row" layout-align="start center" flex="" class="layout-align-start-center layout-row flex">
+      <md-button class="menu-button md-ink-ripple" type="button"
+                 ng-click="$mdOpenMenu()">
+                    <span layout="row" layout-align="center center" class="layout-align-center-center layout-row">
+                      <i class="material-icons">&#xE871;</i>
+                        </span>
+      </md-button>
+      <div class="toolbar-separator"></div>
+      <div class="zp-server-name">
+        Eternal Gamer
+      </div>
+      <div class="toolbar-separator"></div><!-- ngIf: $root.loadingProgress --></div>
+    <div layout="row" layout-align="start center" class="layout-align-start-center layout-row">
+      <md-button class="user-button md-ink-ripple" type="button"
+                 ng-click="$mdOpenMenu()">
+                  <span layout="row" layout-align="center center" >
+                    <i class="material-icons">&#xE7FF;</i>
+                    <span class="username hide-xs" hide-xs="">Zupa</span>
+                  </span>
+      </md-button>
+      <div class="toolbar-separator"></div>
+      <md-button class="language-button md-ink-ripple" type="button"
+                 ng-click="$mdOpenMenu()">
+                <span layout="row" layout-align="center center" class="layout-align-center-center layout-row">
+                  en
+                </span>
+      </md-button>
+    </div>
+  </div>
 </md-toolbar>
