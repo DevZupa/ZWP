@@ -1,82 +1,108 @@
-<div layout="vertical" layout-fill>
+<section layout="row" flex  layout-fill>
+<md-sidenav id="zp-vertical-navigation" class="md-primary-bg md-locked-open zp-sidebar" md-is-locked-open="true" md-component-id="navigation" layout-fill>
+  <md-toolbar class="zp-site-header md-whiteframe-1dp layout-align-space-between-center layout-row" layout="row" layout-align="space-between center" >
+    <div class="logo layout-align-start-center layout-row" layout="row" layout-align="start center">
+    <span class="logo-image">Z</span>
+    <span class="logo-text">Web Panel</span>
+  </div>
+  <md-icon class="fold-toggle s18 md-font icon-backburger material-icons md-default-theme" md-font-icon="icon-backburger" ng-click="vm.toggleMsNavigationFolded()" role="button"></md-icon>
+  </md-toolbar>
+</md-sidenav>
 
-  <md-content>
-    <header>
-      <acme-navbar creation-date="main.creationDate"></acme-navbar>
-    </header>
+<div flex layout="column" class="layout-column flex">
 
-    <section class="jumbotron">
-      <h1>'Allo, 'Allo!</h1>
-      <p class="lead">
-        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
-      </p>
-      <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Splendid Toastr</md-button>
-      <p>
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-      </p>
-    </section>
+    <div layout="column" layout-fill layout-align="top center">
 
-    <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <md-card-content>
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <h3 class="md-title">{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-        </md-card-content>
-        <div class="md-action-buttons">
-          <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
+
+      <md-toolbar id="toolbar" class="md-menu-toolbar md-whiteframe-1dp ng-scope md-default-theme" ui-view="toolbar">
+        <div layout="row" layout-align="start center" class="ng-scope layout-align-start-center layout-row">
+          <div layout="row" layout-align="start center" flex="" class="layout-align-start-center layout-row flex">
+            <button class="md-icon-button md-button ng-scope md-ink-ripple hide-gt-sm md-default-theme" type="button"
+                    ng-transclude="" id="navigation-toggle" ng-click="vm.toggleSidenav('navigation')" hide-gt-sm=""
+                    aria-label="Toggle navigation" translate="" translate-attr-aria-label="TOOLBAR.TOGGLE_NAVIGATION">
+              <md-icon md-font-icon="icon-menu"
+                       class="icon ng-scope ng-isolate-scope md-font icon-menu material-icons md-default-theme"
+                       aria-hidden="true">
+              </md-icon>
+            </button>
+            <div class="zp-server-icon">
+              <i class="material-icons">&#xE871;</i>
+            </div>
+            <div class="toolbar-separator"></div>
+            <div class="zp-server-name">
+              Eternal Gamers
+            </div>
+            <div class="toolbar-separator"></div><!-- ngIf: $root.loadingProgress --></div>
+          <div layout="row" layout-align="start center" class="layout-align-start-center layout-row">
+            <md-menu-bar id="user-menu" role="menubar" class="md-keyboard-mode md-default-theme">
+              <md-menu md-position-mode="left bottom" class="md-menu ng-scope">
+                <button class="user-button md-button ng-scope md-ink-ripple md-default-theme" type="button"
+                        ng-transclude="" ng-click="$mdOpenMenu()" aria-label="User settings" translate=""
+                        translate-attr-aria-label="TOOLBAR.USER_SETTINGS" aria-haspopup="true" aria-expanded="false"
+                        aria-owns="menu_container_7">
+                  <span layout="row" layout-align="space-between center"
+                       class="ng-scope layout-align-space-between-center layout-row">
+                    <i class="material-icons">&#xE7FF;</i>
+                    <span class="username hide-xs" hide-xs="">Zupa</span>
+                  </span>
+                </button>
+                <div class="md-open-menu-container md-whiteframe-z2" id="menu_container_7" style="display: none;"
+                     aria-hidden="true">
+                  <md-menu-content width="3" class="md-menu-bar-menu md-dense" role="menu">
+                    <md-menu-item class="md-indent" ui-sref="app.pages_profile" href="/pages/profile">
+                      <button class="md-button md-ink-ripple md-default-theme" type="button" ng-transclude=""
+                              role="menuitem" aria-label="My Profile"><span class="ng-scope">My Profile
+</span></button>
+                    </md-menu-item>
+                    <md-menu-item class="md-indent" ui-sref="app.mail" href="/mail">
+                      <md-icon md-font-icon="icon-email"
+                               class="icon ng-isolate-scope md-font icon-email material-icons md-default-theme"
+                               aria-hidden="true"></md-icon>
+                      <button class="md-button md-ink-ripple md-default-theme" type="button" ng-transclude=""
+                              role="menuitem" aria-label="Inbox"><span class="ng-scope">Inbox</span></button>
+                    </md-menu-item>
+                    <md-menu-item class="md-indent">
+                      <md-icon md-font-icon="" ng-class="vm.userStatus.icon" ng-style="{'color': vm.userStatus.color }"
+                               class="icon ng-isolate-scope material-icons icon-checkbox-marked-circle md-default-theme"
+                               aria-hidden="true" style="color: rgb(76, 175, 80);"></md-icon>
+                      <md-menu id="user-status-menu" md-position-mode="cascade" class="md-nested-menu md-menu ng-scope"
+                               md-nest-level="1">
+                        <button class="status md-button md-ink-ripple md-default-theme" type="button" ng-transclude=""
+                                ng-click="$mdOpenMenu()" ng-class="vm.userStatus.class" role="menuitem"
+                                aria-haspopup="true" aria-expanded="false" aria-owns="menu_container_6"
+                                aria-label="Online">
+                          <span class="ng-binding ng-scope">
+                            Online</span>
+                        </button>
+                      </md-menu>
+                    </md-menu-item>
+                  </md-menu-content>
+                </div>
+              </md-menu>
+            </md-menu-bar>
+            <div class="toolbar-separator"></div>
+            <md-menu id="language-menu" md-offset="0 72" md-position-mode="target-right target"
+                     class="md-menu ng-scope">
+              <button class="language-button md-button md-ink-ripple md-default-theme" type="button" ng-transclude=""
+                      ng-click="$mdOpenMenu()" aria-label="Language" md-menu-origin="" md-menu-align-target=""
+                      aria-haspopup="true" aria-expanded="false" aria-owns="menu_container_8">
+                <span layout="row" layout-align="center center" class="ng-scope layout-align-center-center layout-row">
+                  en
+                </span>
+              </button>
+            </md-menu>
+          </div>
         </div>
-      </md-card>
+      </md-toolbar>
+
+
+      <md-content flex layout-padding>
+        test
+      </md-content>
+
     </div>
-  </md-content>
+    <div flex></div>
 
 </div>
 
-
-
-
-
-  <section layout="row" flex="">
-
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-
-      <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">Sidenav Left</h1>
-      </md-toolbar>
-      <md-content layout-padding="" ng-controller="LeftCtrl">
-        <md-button ng-click="close()" class="md-primary" >
-          Close Sidenav Left
-        </md-button>
-        <p>
-          This sidenav is locked open on your device. To go back to the default behavior,
-          narrow your display.
-        </p>
-      </md-content>
-
-    </md-sidenav>
-
-    <md-content flex="" layout-padding="">
-
-      <div layout="column" layout-fill="" layout-align="top center">
-        <p>
-          The left sidenav will 'lock open' on a medium (>=960px wide) device.
-        </p>
-        <p>
-          The right sidenav will focus on a specific child element.
-        </p>
-
-        <div>
-          <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md="">
-            Toggle left
-          </md-button>
-        </div>
-      </div>
-
-      <div flex=""></div>
-
-    </md-content>
-
-  </section>
-
-
+</section>

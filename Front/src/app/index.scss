@@ -5,7 +5,12 @@
 // bower:scss
 // endbower
 
+
+
+@import '_variables.scss';
+
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
+@import url(../../bower_components/angular-material/angular-material.scss);
 
 @font-face {
   font-family: 'Material Icons';
@@ -44,8 +49,8 @@
   font-feature-settings: 'liga';
 }
 
-html {
-  font-family: 'Roboto Slab', serif;
+html, body {
+  font-family: 'Roboto', 'Roboyo', serif;
 }
 
 [layout=row] {

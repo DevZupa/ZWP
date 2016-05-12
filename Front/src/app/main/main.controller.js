@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, $mdSidenav, $log) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -15,6 +15,11 @@
     vm.showToastr = showToastr;
 
     activate();
+
+    vm.openLeftMenu = function() {
+      $log.info('test');
+      $mdSidenav('left').toggle();
+    };
 
     function activate() {
       getWebDevTec();
