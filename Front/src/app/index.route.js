@@ -12,6 +12,11 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+      .when('/admin/players', {
+        templateUrl: 'app/admin/players/players.html',
+        controller: 'PlayersController',
+        controllerAs: 'pl'
+      })
       .otherwise({
         redirectTo: '/'
       });

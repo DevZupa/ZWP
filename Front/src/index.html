@@ -26,96 +26,11 @@
     <![endif]-->
 
     <section layout="row" flex  layout-fill>
-      <md-sidenav id="zp-vertical-navigation" class="md-primary-bg zp-sidebar" md-is-locked-open="true" md-component-id="navigation" layout-fill>
-        <md-toolbar class="zp-site-header md-whiteframe-1dp" layout="row" layout-align="space-between center" >
-          <div class="logo" layout="row" layout-align="start center">
-            <span class="logo-image">Z</span>
-            <span class="logo-text">Web Panel</span>
-          </div>
-        </md-toolbar>
-
-        <ul class="ms-navigation">
-          <li class="ms-navigation-node group has-children">
-           <div layout="row" class="ms-navigation-item">
-            <div class="ms-navigation-button header-item">
-              <span class="title ng-binding flex" translate="" flex="">Server Statistics</span>
-            </div>
-          </div>
-
-           <ul>
-             <li>
-             <div layout="row" class="ms-navigation-item">
-              <a class="ms-navigation-button ng-scope" href="/">
-                <i class="icon s16 material-icons">people</i>
-               <span class="title " translate="" flex="">Players</span>
-
-             </a>
-
-             </div>
-
-               <!-- ngIf: vm.hasChildren && !vm.isHidden() -->
-             </li>
-           </ul>
-          </li>
-
-          <li class="ms-navigation-node group has-children">
-            <div layout="row" class="ms-navigation-item">
-              <div class="ms-navigation-button header-item">
-                <span class="title flex" translate="" flex="">Server Administration</span>
-              </div>
-            </div>
-
-            <ul>
-
-            </ul>
-          </li>
-
-          <li class="ms-navigation-node group has-children">
-            <div layout="row" class="ms-navigation-item">
-              <div class="ms-navigation-button header-item">
-                <span class="title flex" translate="" flex="">My Exile</span>
-              </div>
-            </div>
-
-            <ul>
-
-            </ul>
-          </li>
-        </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </md-sidenav>
+      <zupa-sidebar layout="column"></zupa-sidebar>
       <div flex layout="column">
         <div layout="column" layout-fill layout-align="top center">
           <zupa-navbar flex layout-fill layout="column"></zupa-navbar>
-          <md-content flex layout-fill>
-            <div ng-view layout-fill></div>
+          <md-content flex layout-fill ng-view>
           </md-content>
         </div>
       </div>
